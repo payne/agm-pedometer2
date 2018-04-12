@@ -12,6 +12,8 @@ export class AppComponent {
   lat = 51.678418;
   lng = 7.809007;
   mapTypeId = 'terrain';
+  map: any;
+  poly: any;
 
   markers: MarkerType[] = [
     {
@@ -44,12 +46,35 @@ export class AppComponent {
     }
   ];
 
+  constructor(private google: GoogleMapsAPIWrapper) {
+   console.log('Here is google:');
+   console.log(this.google);
+  }
+
+  mapReady(e: any) {
+    console.log('mapReady');
+    console.log(e);
+    this.map = e;
+    // this.poly = // new this.google._map.
+    this.poly = new this.map.Polyline({
+      strokeColor: '#000000',
+      strokeOpacity: 1.0,
+      strokeWeight: 3
+    });
+    this.poly.setMap(this.map);
+  }
 
   pClick(e: PolyMouseEvent) {
    console.log(`MGPV4: pClick(${e})`);
    console.log(e);
    console.log(e.latLng.lat());
    console.log(e.latLng.lng());
+
+  let path = this.poly.getPath();
+
+  // Because path is an MVCArray, we can simply append a new coordinate
+	//         // and it will automatically appear.
+   path.push(e.latLng);
   }
 
   mClick(e: any) {

@@ -1,7 +1,9 @@
 <h1>One step at a time...</h1>
 <pre> (polyClick)="pClick($event)" </pre>
 
-<agm-map [latitude]="lat" [longitude]="lng" 
+<agm-map 
+			 (mapReady)="mapReady($event)"	
+				[latitude]="lat" [longitude]="lng" 
 			(mapClick)="mClick($event)"	
 				[usePanning]='true' [mapTypeId]="mapTypeId">
 	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
