@@ -56,11 +56,14 @@ export class AppComponent {
     console.log(e);
     this.map = e;
     // this.poly = // new this.google._map.
-    this.poly = new this.map.Polyline({
-      strokeColor: '#000000',
-      strokeOpacity: 1.0,
-      strokeWeight: 3
-    });
+    //this.poly = new this.map.Polyline({
+    this.google.getNativeMap().then((m) => {
+      this.poly = new m.Polyline({
+        strokeColor: '#000000',
+        strokeOpacity: 1.0,
+        strokeWeight: 3
+      });
+		});
     this.poly.setMap(this.map);
   }
 
