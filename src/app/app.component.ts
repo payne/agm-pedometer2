@@ -9,9 +9,10 @@ import { GoogleMapsAPIWrapper, PolyMouseEvent } from '@agm/core';
 })
 export class AppComponent {
   title = 'app';
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 41.25236;
+  lng = -96.001897;
   mapTypeId = 'terrain';
+  kmlurl = 'http://MattPayne.org/ agm-pedometer2/Friday.kml';
 
   markers: MarkerType[] = [
     {

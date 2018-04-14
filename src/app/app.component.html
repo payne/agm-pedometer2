@@ -1,17 +1,11 @@
 <h1>One step at a time...</h1>
-<pre> (polyClick)="pClick($event)" </pre>
 
 <agm-map [latitude]="lat" [longitude]="lng" 
 			(mapClick)="mClick($event)"	
 				[usePanning]='true' [mapTypeId]="mapTypeId">
 	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 							
-    <agm-polygon [paths]="markers"
-			[polyDraggable]="true"
-      strokeWeight="4"
-      (polyClick)="pClick($event)" 
-      strokeColor="orange"
-      fillOpacity="0"></agm-polygon> 
+		<agm-kml-layer [url]="kmlurl"></agm-kml-layer>
 
 </agm-map>
 
