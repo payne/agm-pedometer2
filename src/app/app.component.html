@@ -1,4 +1,21 @@
-<h1>One step at a time...</h1>
+<h1>Slowly learning <a href="https://angular-maps.com/">AGM</a> One step at a time...</h1>
+
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mClick($event)"	
+				[usePanning]='true' [mapTypeId]="mapTypeId">
+
+	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+							
+		<agm-kml-layer [url]="kmlurl"></agm-kml-layer>
+
+		<agm-polyline>
+		 <!-- the mClick method adds to the mapPointer array.  Sweet! -->
+     <agm-polyline-point *ngFor="let pointer of mapPointer"
+      [latitude]="pointer.lat"
+      [longitude]="pointer.lng">
+     </agm-polyline-point>
+  </agm-polyline>
+
+</agm-map>
 
   <div class="github-banner">
     <a href="https://github.com/payne/agm-pedometer2" class="github-corner" aria-label="View source on Github">
@@ -9,20 +26,4 @@
       .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
     </style>
   </div>
-
-<agm-map [latitude]="lat" [longitude]="lng" 
-			(mapClick)="mClick($event)"	
-				[usePanning]='true' [mapTypeId]="mapTypeId">
-	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-							
-		<agm-kml-layer [url]="kmlurl"></agm-kml-layer>
-
-		<agm-polyline>
-     <agm-polyline-point *ngFor="let pointer of mapPointer"
-      [latitude]="pointer.lat"
-      [longitude]="pointer.lng">
-     </agm-polyline-point>
-  </agm-polyline>
-
-</agm-map>
 
