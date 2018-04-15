@@ -27,7 +27,7 @@ module.exports = "agm-map {\n  height: 400px;\n}\n\n"
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>One step at a time...</h1>\n\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" \n\t\t\t(mapClick)=\"mClick($event)\"\t\n\t\t\t\t[usePanning]='true' [mapTypeId]=\"mapTypeId\">\n\t  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n\t\t\t\t\t\t\t\n\t\t<agm-kml-layer [url]=\"kmlurl\"></agm-kml-layer>\n\n</agm-map>\n\n"
+module.exports = "<h1>One step at a time...</h1>\n\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" \n\t\t\t(mapClick)=\"mClick($event)\"\t\n\t\t\t\t[usePanning]='true' [mapTypeId]=\"mapTypeId\">\n\t  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n\t\t\t\t\t\t\t\n\t\t<agm-kml-layer [url]=\"kmlurl\"></agm-kml-layer>\n\n\t\t<agm-polyline>\n     <agm-polyline-point *ngFor=\"let pointer of mapPointer\"\n      [latitude]=\"pointer.lat\"\n      [longitude]=\"pointer.lng\">\n     </agm-polyline-point>\n  </agm-polyline>\n\n</agm-map>\n\n"
 
 /***/ }),
 
@@ -51,6 +51,7 @@ var AppComponent = /** @class */ (function () {
         this.lng = -96.001897;
         this.mapTypeId = 'terrain';
         this.kmlurl = 'http://MattPayne.org/agm-pedometer2/Friday.kml';
+        this.mapPointer = [];
         this.markers = [
             {
                 lat: 51.673858,
@@ -96,6 +97,7 @@ var AppComponent = /** @class */ (function () {
         console.log(e.coords.lat);
         console.log(e.coords.lng);
         this.markers.push({ lat: e.coords.lat, lng: e.coords.lng, draggable: false, infowindowContent: 'junk' });
+        this.mapPointer.push({ lat: e.coords.lat, lng: e.coords.lng });
         console.log(this.markers.length);
     };
     AppComponent = __decorate([
