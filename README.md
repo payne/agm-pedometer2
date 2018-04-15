@@ -1,7 +1,7 @@
 # AgmPedometer2
 
 Try this live at 
-<a href="MattPayne.org/agm-pedometer2">MattPayne.org/agm-pedometer2</a>
+<a href="http://MattPayne.org/agm-pedometer2">MattPayne.org/agm-pedometer2</a>
 
 # Things I've learned so far:
 1. `agm-map { height: 500px; }` is needed in the `*.component.css` file to get the map to show up.  
