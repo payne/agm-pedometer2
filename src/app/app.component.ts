@@ -13,6 +13,7 @@ export class AppComponent {
   lng = -96.001897;
   mapTypeId = 'terrain';
   kmlurl = 'http://MattPayne.org/agm-pedometer2/Friday.kml';
+  mapPointer = [];
 
   markers: MarkerType[] = [
     {
@@ -61,6 +62,7 @@ export class AppComponent {
    console.log(e.coords.lat);
    console.log(e.coords.lng);
    this.markers.push({lat: e.coords.lat, lng: e.coords.lng, draggable: false, infowindowContent: 'junk'});
+   this.mapPointer.push({lat: e.coords.lat, lng: e.coords.lng});
    console.log(this.markers.length);
   }
 }

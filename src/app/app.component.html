@@ -7,5 +7,12 @@
 							
 		<agm-kml-layer [url]="kmlurl"></agm-kml-layer>
 
+		<agm-polyline>
+     <agm-polyline-point *ngFor="let pointer of mapPointer"
+      [latitude]="pointer.lat"
+      [longitude]="pointer.lng">
+     </agm-polyline-point>
+  </agm-polyline>
+
 </agm-map>
 
