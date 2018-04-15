@@ -6,6 +6,7 @@ import { GoogleMapsAPIWrapper } from '@agm/core';
 import { AppComponent } from './app.component';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 import { AgmCoreModule } from '@agm/core';
+import { HaversineService } from 'ng2-haversine';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { AgmCoreModule } from '@agm/core';
     }),
     AgmJsMarkerClustererModule
   ],
-  providers: [GoogleMapsAPIWrapper],
+  providers: [GoogleMapsAPIWrapper, HaversineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

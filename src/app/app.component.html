@@ -1,5 +1,7 @@
 <h1>Slowly learning <a href="https://angular-maps.com/">AGM</a> One step at a time...</h1>
 
+<h2>Distance: {{distance}} miles</h2>
+
 <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mClick($event)"	
 				[usePanning]='true' [mapTypeId]="mapTypeId">
 
@@ -10,8 +12,8 @@
 		<agm-polyline>
 		 <!-- the mClick method adds to the mapPointer array.  Sweet! -->
      <agm-polyline-point *ngFor="let pointer of mapPointer"
-      [latitude]="pointer.lat"
-      [longitude]="pointer.lng">
+      [latitude]="pointer.latitude"
+      [longitude]="pointer.longitude">
      </agm-polyline-point>
   </agm-polyline>
 
