@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { GoogleMapsAPIWrapper, PolyMouseEvent } from '@agm/core';
 import { HaversineService, GeoCoord } from 'ng2-haversine';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,16 @@ export class AppComponent {
   mapTypeId = 'terrain';
   kmlurl = 'http://MattPayne.org/agm-pedometer2/Friday.kml';
   mapPointer: MarkerType[] = [];
+  rows = [
+    { name: 'Austin', gender: 'Male', company: 'Swimlane' },
+                      { name: 'Dany', gender: 'Male', company: 'KFC' },
+                      { name: 'Molly', gender: 'Female', company: 'Burger King' },
+                    ];
+  columns = [
+              { prop: 'name' },
+              { name: 'Gender' },
+              { name: 'Company' }
+            ];
 
   constructor(private harversinceService: HaversineService) {}
 

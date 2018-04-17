@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { GoogleMapsAPIWrapper } from '@agm/core';
 
@@ -14,6 +15,7 @@ import { HaversineService } from 'ng2-haversine';
     AppComponent
   ],
   imports: [
+    NgxDatatableModule,
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAqxjtsvw8b-EVZ1sPk1ZJ8dh8jKl7eDU0'
