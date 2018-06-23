@@ -16,6 +16,7 @@ export class AppComponent {
   lng = -96.001897;
   mapTypeId = 'terrain';
   kmlurl = 'http://MattPayne.org/agm-pedometer2/Friday.kml';
+  kmlurlSaturday = 'http://MattPayne.org/agm-pedometer2/Saturday.kml';
   mapPointer: MarkerType[] = [];
   rows = [
     { name: 'Austin', gender: 'Male', company: 'Swimlane' },
