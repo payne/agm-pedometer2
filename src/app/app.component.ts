@@ -12,7 +12,8 @@ export class AppComponent {
   lat = 41.25236;
   lng = -96.001897;
   mapTypeId = 'terrain';
-  kmlurl = 'http://MattPayne.org/ agm-pedometer2/Friday.kml';
+  kmlurl = 'http://MattPayne.org/agm-pedometer2/Friday.kml';
+  kmlurlSaturday = 'http://MattPayne.org/agm-pedometer2/Saturday.kml';
 
   markers: MarkerType[] = [
     {
